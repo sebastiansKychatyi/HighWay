@@ -1,43 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Highway Single Post</title>
+<?php
 
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/fontAwesome.css">
-        <link rel="stylesheet" href="css/light-box.css">
-        <link rel="stylesheet" href="css/templatemo-style.css">
-
-        <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-
-<body>
-
-    <nav>
-        <div class="logo">
-            <a href="index.html">High<em>Way</em></a>
-        </div>
-      <div class="menu-icon">
-        <span></span>
-      </div>
-    </nav>
-
-    <div class="page-heading">
-        <div class="container">
-            <div class="heading-content">
-                <h1>Single <em>Post</em></h1>
-            </div>
-        </div>
-    </div>
+  include('partials/header.php');
+  
+?> 
 
 
     <div class="blog-entries">
@@ -46,38 +11,54 @@
                 <div class="blog-posts">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="single-blog-post">
+                            <div class="blog-post">
                                 <img src="img/blog_post_1.png" alt="">
                                 <div class="text-content">
-                                    <h2>Sed sit amet viverra augue</h2>
-                                    <span><a href="#">Admin</a> / <a href="#">16 September 2018</a> / <a href="#">Branding</a></span>
-                                    <p>Nullam et justo pharetra, commodo eros ac, pharetra justo. Donec vel vehicula urna. Proin sodales ligula vitae lacus elementum, at tempor nisl congue. Pellentesque nec lacus velit. Vestibulum tincidunt hendrerit ante id sagittis. Phasellus sodales nibh mattis neque interdum viverra. Nam accumsan arcu id fringilla auctor. 
-                                    <br><br>Suspendisse et rutrum nisl. Phasellus porttitor metus vel justo blandit, in finibus neque elementum. Nullam semper, turpis quis egestas consequat, dui eros tristique lectus, ac euismod ex quam id mauris. Nunc sit amet nibh sollicitudin, interdum nunc in, eleifend est.
-                                    
-                                	<br><br>Pellentesque vel dignissim libero, et sagittis elit. Nulla dignissim eleifend tellus, sed molestie risus rutrum non. Etiam lorem odio, convallis a arcu vel, bibendum molestie metus. Pellentesque imperdiet nisl ante, eu congue nisl suscipit id.
-                                    <br><br><a href="blog.html">Back to Blog</a></p>
-                                    <div class="tags-share">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <ul class="tags">
-                                                    <li>Tags:</li>
-                                                    <li><a href="#">life</a>,</li>
-                                                    <li><a href="#">nature</a>,</li>
-                                                    <li><a href="#">life is good</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <ul class="share">
-                                                    <li>Share:</li>
-                                                    <li><a href="#">facebook</a>,</li>
-                                                    <li><a href="#">twitter</a>,</li>
-                                                    <li><a href="#">behance</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                    <span><a href="#">Admin</a> / <a href="#">16 September 2023</a> / <a href="#">Branding</a></span>
+                                    <h2>Duis mollis orci vel lectus</h2>
+                                    <p>Proin at augue quam. In laoreet arcu id lacus fringilla auctor. Etiam rutrum aliquet nisl, eu fermentum elit fermentum sed. Donec finibus urna sed sollicitudin egestas. In hac habitasse platea dictumst. 
+                                    <br><br>Phasellus purus turpis, porta non lectus vitae, laoreet blandit diam. Suspendisse elementum ligula at purus gravida, vel malesuada dolor accumsan. Morbi finibus dapibus ex, ut finibus felis.</p>
+                                    <div class="simple-btn">
+                                        <a href="single-post.html">continue reading</a>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="blog-post">
+                                <img src="img/blog_post_2.png" alt="">
+                                <div class="text-content">
+                                    <span><a href="#">Admin</a> / <a href="#">28 August 2023</a> / <a href="#">Lifestyle</a></span>
+                                    <h2>Integer scelerisque odio elit</h2>
+                                    <p>Aliquam erat volutpat. Donec condimentum ante nec sapien sodales, ut molestie mauris scelerisque. Maecenas in turpis sed odio pretium tempor. In libero tellus, maximus in accumsan id, posuere non urna. 
+                                    <br><br>Fusce ex elit, congue vitae interdum et, sodales vitae purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque id egestas nibh. Curabitur convallis cursus pharetra. Curabitur non ligula id lacus pulvinar sollicitudin. Etiam quis tempus lectus, sed iaculis ex.</p>
+                                    <div class="simple-btn">
+                                        <a href="single-post.html">continue reading</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="blog-post">
+                                <img src="img/blog_post_3.png" alt="">
+                                <div class="text-content">
+                                    <span><a href="#">Admin</a> / <a href="#">31 July 2018</a> / <a href="#">Work Stuff</a></span>
+                                    <h2>Nulla condimentum at dui eu</h2>
+                                    <p>Cras ultrices ex sodales, vestibulum leo quis, volutpat mauris. In pretium vehicula dolor, sit amet ornare orci placerat sit amet. Nam non dolor sagittis, dignissim purus at, fringilla lacus. In aliquet, sapien ut lobortis molestie, lorem diam commodo leo, vitae eleifend diam justo ac velit.
+                                    <br><br>ras felis purus, efficitur vel luctus a, ultrices vitae diam. Maecenas maximus vehicula aliquet. Donec scelerisque, diam id dapibus ultrices, tortor tellus eleifend arcu, maximus iaculis mi elit sit amet odio. Donec at mauris sit amet velit tempus semper.</p>
+                                    <div class="simple-btn">
+                                        <a href="single-post.html">continue reading</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <ul class="page-number">
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">></a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -94,13 +75,13 @@
                             <h2>Archives</h2>
                         </div>
                         <ul>
-                            <li><a href="#">> 2018 September (4)</a></li>
-                            <li><a href="#">> 2018 August (16)</a></li>
-                            <li><a href="#">> 2018 July (5)</a></li>
-                            <li><a href="#">> 2018 May (3)</a></li>
-                            <li><a href="#">> 2018 February (27)</a></li>
-                            <li><a href="#">> 2017 December (18)</a></li>
-                            <li><a href="#">> 2017 November (12)</a></li>
+                            <li><a href="#">> 2023 September (4)</a></li>
+                            <li><a href="#">> 2023 August (16)</a></li>
+                            <li><a href="#">> 2023 July (5)</a></li>
+                            <li><a href="#">> 2023 May (3)</a></li>
+                            <li><a href="#">> 2023 February (27)</a></li>
+                            <li><a href="#">> 2023 December (18)</a></li>
+                            <li><a href="#">> 2023 November (12)</a></li>
                         </ul>
                     </div>
                     <div class="recent-posts">
@@ -167,12 +148,15 @@
     <footer>
         <div class="container-fluid">
             <div class="col-md-12">
-                <p>Copyright &copy; 2018 Company HighWay 
-    
-    | Designed by Sebastian Kychatyi</p>
-            </div>
-        </div>
-    </footer>
+                <footer>
+                    <div class="container-fluid">
+                        <div class="col-md-12">
+                            <p>Copyright &copy; 2018 Company HighWay 
+                
+                | Designed by Sebastian Kychatyi</p>
+                        </div>
+                    </div>
+                </footer>
 
 
       <!-- Modal button -->
@@ -221,28 +205,11 @@
       </div>
     </div>
 
-    <section class="overlay-menu">
-        <div class="container">
-          <div class="row">
-            <div class="main-menu">
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">Blog Entries</a>
-                    </li>
-                    <li>
-                        <a href="single-post.html">Single Post</a>
-                    </li>
-                </ul>
-                <p>We work for the happiness of our readers.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-  
+    <?php
 
+include('partials/section.php');
+
+    ?> 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
