@@ -4,7 +4,7 @@
           <div class="main-menu">
               <ul>
                   <li>
-                      <a href="index.php">Home</a>
+                      <a href="main.php">Home</a>
                   </li>
                   <li>
                       <a href="blog.php">Blog Entries</a>
@@ -13,9 +13,15 @@
                       <a href="single-post.php">Single Post</a>
                   </li>
                   <li>
-                      <a href="single-post.php"></a>
+                      <a href="php/login.php">sign in</a>
                   </li>
-              </ul>
+                  <li>
+                      <a href="php/index.php">home page</a>
+                  </li>
+                  <li>
+                      <a href="PHPCRUD/index.php">HighWay anon</a>
+                  </li>
+                </ul>
               <p>We work for the happiness of our readers.</p>
           </div>
         </div>
