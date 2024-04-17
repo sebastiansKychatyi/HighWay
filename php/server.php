@@ -1,5 +1,10 @@
+
+
 <?php
-session_start();
+// Проверяем, существует ли сессия, прежде чем вызывать session_start()
+if(session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // initializing variables
 $username = "";
@@ -51,11 +56,9 @@ if (isset($_POST['reg_user'])) {
         mysqli_query($db, $query);
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now logged in";
-        header('location: HighWay/main.php');// index.php need fix!! GOING FOR THE FROM  PAGE
+        header('location: index.php');// index.php need fix!! GOING FOR THE FROM  PAGE
   }
 }
-
-// ... 
 
 // LOGIN USER
 if (isset($_POST['login_user'])) {
@@ -76,11 +79,10 @@ if (isset($_POST['login_user'])) {
         if (mysqli_num_rows($results) == 1) {
           $_SESSION['username'] = $username;
           $_SESSION['success'] = "You are now logged in";
-          header('location: HighWay/main.php');
+          header('location: ../main.php');
         }else {
                 array_push($errors, "Wrong username/password combination");
         }
   }
 }
-
 ?>
