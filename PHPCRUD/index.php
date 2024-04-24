@@ -32,6 +32,14 @@ if (!isset($_SESSION['username'])) {
     <section>
         <h1 style="text-align: center;margin: 50px 0;">HighWay Text</h1>
         <p style="text-align: center;margin: 50px 0;">HighWay text is an anonymous website where students can freely share their thoughts without fear of judgment or harassment. Here they can say things that in real life they cannot say out loud for fear of repercussions.</p>
+        <h2 style="text-align: center;margin: 40px 0;">Rules</h2>
+        <p style="text-align: center;margin: 30px 0;">1.Do not insult anyone.</p>
+        <p style="text-align: center;margin: 30px 0;">2.Use a maximum of 499 characters.</p>
+        <p style="text-align: center;margin: 30px 0;">3.The admin always has the right.</p>
+        <p style="text-align: center;margin: 30px 0;">4.If rule 3 is not followed, then rule 4 applies: the admin always has the right.</p>
+        <p style="text-align: center;margin: 30px 0;">5.Let's be kind.</p>
+
+
         <div class="container">
             <form action="adddata.php" method="post">
                 <div class="row">
