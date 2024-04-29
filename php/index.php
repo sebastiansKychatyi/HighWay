@@ -1,11 +1,14 @@
-
 <?php 
+  // Session start
   session_start(); 
 
-  if (!isset($_SESSION['username'])) {
+  // Overenie, či užívateľ nie je prihlásený, a ak áno, presmeruje sa na domovskú stránku
+  if (!isset($_SESSION['username']) && basename($_SERVER['PHP_SELF']) !== 'login.php' && basename($_SERVER['PHP_SELF']) !== 'register.php') {
         $_SESSION['msg'] = "You must log in first";
         header('location: login.php');
   }
+
+  // Ak je prítomný GET parameter 'logout', ukončíme reláciu a presmerujeme na prihlasovaciu stránku
   if (isset($_GET['logout'])) {
         session_destroy();
         unset($_SESSION['username']);

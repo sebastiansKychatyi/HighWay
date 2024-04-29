@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($result) == 1) {
         // Если логин и пароль верные, устанавливаем сессию и перенаправляем пользователя
         $_SESSION['username'] = $username;
-        header('Location: index.php');
+        //header('Location: index.php');
         exit();
     } else {
         // Если пользователь не найден или пароль неверен, добавляем ошибку

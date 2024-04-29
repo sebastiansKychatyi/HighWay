@@ -7,9 +7,14 @@ if (!isset($_SESSION['username'])) {
     header('Location: php/login.php');
     exit(); // После перенаправления следует завершить выполнение скрипта
 }
+
+// Обробка виходу з сесії при натисканні кнопки "logout"
+if (isset($_POST['logout'])) {
+    session_destroy(); // Уничтожаем все данные сессии
+    header('Location: ../php/login.php'); // Перенаправляем пользователя на страницу входа
+    exit();
+}
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,8 +23,9 @@ if (!isset($_SESSION['username'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP - MYSQL - CRUD</title>
+    <title>HighWay anonymne priznania</title>
     <!-- CSS only -->
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
@@ -29,6 +35,12 @@ if (!isset($_SESSION['username'])) {
 </head>
 
 <body>
+    <div class="contents">
+        <form method="post">
+            <button class="button" type="submit" name="logout" class="btn btn-danger">Logout</button>
+        </form>
+    </div>
+
     <section>
         <h1 style="text-align: center;margin: 50px 0;">HighWay Text</h1>
         <p style="text-align: center;margin: 50px 0;">HighWay text is an anonymous website where students can freely share their thoughts without fear of judgment or harassment. Here they can say things that in real life they cannot say out loud for fear of repercussions.</p>
@@ -109,4 +121,5 @@ if (!isset($_SESSION['username'])) {
         </div>
     </section>
 </body>
+
 </html>

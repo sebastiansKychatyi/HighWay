@@ -1,0 +1,7 @@
+.button {
+    position: fixed; /* Позиционируем кнопку относительно окна браузера */
+    top: 20px; /* Отступ от верхнего края */
+    right: 20px; /* Отступ от правого края */
+    background-color: brown;
+    color:black
+}
