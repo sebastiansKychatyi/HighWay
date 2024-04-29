@@ -5,3 +5,10 @@
     background-color: brown;
     color:black
 }
+.welcome {
+    position: fixed; /* Позиционируем кнопку относительно окна браузера */
+    top: 20px; /* Отступ от верхнего края */
+    right: 100px; /* Отступ от правого края */
+    background-color: brown;
+    color:black
+}

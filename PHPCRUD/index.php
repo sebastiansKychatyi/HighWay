@@ -40,9 +40,15 @@ if (isset($_POST['logout'])) {
             <button class="button" type="submit" name="logout" class="btn btn-danger">Logout</button>
         </form>
     </div>
+    <div class="contents">
+        <?php  if (isset($_SESSION['username'])) : ?>
+            <p class="welcome" >Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+        <?php endif ?>
+    </div>
 
     <section>
         <h1 style="text-align: center;margin: 50px 0;">HighWay Text</h1>
+        <p style="text-align: center;margin: 50px 0;">Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
         <p style="text-align: center;margin: 50px 0;">HighWay text is an anonymous website where students can freely share their thoughts without fear of judgment or harassment. Here they can say things that in real life they cannot say out loud for fear of repercussions.</p>
         <h2 style="text-align: center;margin: 40px 0;">Rules</h2>
         <p style="text-align: center;margin: 30px 0;">1.Do not insult anyone.</p>

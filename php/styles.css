@@ -66,3 +66,13 @@
     border: 1px solid #3c763d;
     margin-bottom: 20px;
   }
+  .button {
+    background-color: #5F9EA0;
+    color:rgb(255, 255, 255)
+}
+.text-fontss {
+  text-decoration: none;
+  color: #cf0000;
+  border-bottom-color: rgba(208, 64, 0, 0.2);
+}
+

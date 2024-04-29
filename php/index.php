@@ -19,7 +19,7 @@
 <html>
 <head>
         <title>Home</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 
@@ -42,8 +42,13 @@
     <!-- logged in user information -->
     <?php  if (isset($_SESSION['username'])) : ?>
         <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-        <p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+        <p><?php echo $_SESSION['username']; ?></strong> ty môžeš využívať jednu z našich služieb, ktorou sú anonymné priznania študentov v Nitre.</p>
     <?php endif ?>
+      <ul> 
+        <li>
+             <a class=".text-fontss" href="../PHPCRUD/index.php">HighWay anon</a>
+        </li>
+      </ul>
 </div>
                 
 </body>
