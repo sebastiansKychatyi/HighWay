@@ -64,15 +64,17 @@ if (isset($_POST['logout'])) {
         </form>
 
         <!-- Вывод загруженных изображений -->
-        <div class="foto">
-    <?php
-    $dir = "uploads/"; // Папка, где хранятся загруженные изображения
-    $images = glob($dir . "*.{jpg,png,gif}", GLOB_BRACE); // Получаем список изображений
+        <div class="img-fluid">
+            <?php
+            $dir = "uploads/"; // Папка, где хранятся загруженные изображения
+            $images = glob($dir . "*.{jpg,png,gif}", GLOB_BRACE); // Получаем список изображений
 
-    foreach($images as $image) {
-        echo '<img src="'.$image.'" class="img-fluid" alt="Uploaded Image">';
-    }
-    ?>
+            foreach($images as $image) {
+                echo '<img src="'.$image.'" class="img-fluid" alt="Uploaded Image">';
+            }
+            ?>
+        </div>
+
 </div>
 
 
