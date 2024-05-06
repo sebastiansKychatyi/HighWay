@@ -7,6 +7,7 @@ if (!isset($_SESSION['username'])) {
     exit(); 
 }
 
+
 require_once "conn.php";
 
 // Ak sa odosielajú údaje z formulára pre aktualizáciu

@@ -7,6 +7,7 @@ if (!isset($_SESSION['username'])) {
     header('Location: php/login.php');
     exit(); // После перенаправления следует завершить выполнение скрипта
 }
+
 ?>
 
 <?php

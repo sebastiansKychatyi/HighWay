@@ -8,6 +8,7 @@ if (!isset($_SESSION['username'])) {
     exit(); // После перенаправления следует завершить выполнение скрипта
 }
 ?>
+
 <?php
     require_once "conn.php";
     if(isset($_POST['submit'])){
