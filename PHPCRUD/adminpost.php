@@ -47,7 +47,7 @@ if (isset($_POST['logout'])) {
     </div>
 
     <section>
-        <img class="super"src="foto.jpg" >
+        
         <h1 style="text-align: center;margin: 50px 0;">HighWay post</h1>
         <p style="text-align: center;margin: 50px 0;">Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
         <p style="text-align: center;margin: 50px 0;">the most interesting posts that students talk about</p>

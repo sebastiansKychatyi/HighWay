@@ -40,9 +40,8 @@
 .super {
     max-width: 400px !important; /* Максимальная ширина изображения */
     max-height: 400px !important; /* Максимальная высота изображения */
-    margin: 20%; /* Отступы между изображениями */
+    margin: 40px; /* Отступы между изображениями */
     padding: 200px;
-    object-fit: cover;
 }
 
 
