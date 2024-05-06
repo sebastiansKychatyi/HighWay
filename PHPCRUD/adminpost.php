@@ -47,6 +47,7 @@ if (isset($_POST['logout'])) {
     </div>
 
     <section>
+        <img class="super"src="foto.jpg" >
         <h1 style="text-align: center;margin: 50px 0;">HighWay post</h1>
         <p style="text-align: center;margin: 50px 0;">Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
         <p style="text-align: center;margin: 50px 0;">the most interesting posts that students talk about</p>
@@ -64,7 +65,7 @@ if (isset($_POST['logout'])) {
         </form>
 
         <!-- Вывод загруженных изображений -->
-        <div class="img-fluid">
+        <div class="super">
             <?php
             $dir = "uploads/"; // Папка, где хранятся загруженные изображения
             $images = glob($dir . "*.{jpg,png,gif}", GLOB_BRACE); // Получаем список изображений
