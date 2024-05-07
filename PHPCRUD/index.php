@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once "conn.php"; // Подключаем файл с настройками базы данных
 
 // Проверяем, существует ли сессия с именем пользователя
 if (!isset($_SESSION['username'])) {
@@ -8,12 +9,15 @@ if (!isset($_SESSION['username'])) {
     exit(); // После перенаправления следует завершить выполнение скрипта
 }
 
-// Проверяем, если у пользователя роль администратора
-if ($_SESSION['role'] == 1) {
-    // Если у пользователя роль 1 (пользователь), то перенаправляем его на главную страницу
-    header('Location: index.php');
-    exit();
-}
+// Получаем роль пользователя из базы данных
+$username = $_SESSION['username'];
+$query = "SELECT role FROM users WHERE username = ?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+$role = $row['role'];
 
 // Обработка выхода из сессии при нажатии кнопки "logout"
 if (isset($_POST['logout'])) {
@@ -42,17 +46,20 @@ if (isset($_POST['logout'])) {
 </head>
 
 <body>
+    <!-- Форма для выхода из сессии -->
     <div class="contents">
         <form method="post">
             <button class="button" type="submit" name="logout" class="btn btn-danger">Logout</button>
         </form>
     </div>
+    <!-- Приветствие пользователя -->
     <div class="contents">
-        <?php  if (isset($_SESSION['username'])) : ?>
-            <p class="welcome" >Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+        <?php if (isset($_SESSION['username'])) : ?>
+            <p class="welcome">Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
         <?php endif ?>
     </div>
 
+    <!-- Секция с описанием сайта и правилами -->
     <section>
         <h1 style="text-align: center;margin: 50px 0;">HighWay Text</h1>
         <p style="text-align: center;margin: 50px 0;">Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
@@ -69,7 +76,7 @@ if (isset($_POST['logout'])) {
             <a href="index.php">HighWay anonym</a> <a href="adminpost.php">HighWay post</a>
         </li>
 
-
+        <!-- Форма для добавления данных (доступна для всех пользователей) -->
         <div class="container">
             <form action="adddata.php" method="post">
                 <div class="row">
@@ -98,6 +105,8 @@ if (isset($_POST['logout'])) {
             </form>
         </div>
     </section>
+
+    <!-- Секция с данными из базы данных -->
     <section style="margin: 50px 0;">
         <div class="container">
             <table class="table table-dark">
@@ -107,32 +116,38 @@ if (isset($_POST['logout'])) {
                         <th scope="col">Nickname</th>
                         <th scope="col">Faculty</th>
                         <th scope="col">Message</th>
-                        <th scope="col">Edit</th>
-                        <th scope="col">Delete</th>
+                        <?php if ($role == 2) : ?>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                        <?php endif ?>
                     </tr>
                 </thead>
                 <tbody>
                     <?php 
-                        require_once "conn.php";
-                        $sql_query = "SELECT * FROM results";
-                        if ($result = $conn ->query($sql_query)) {
-                            while ($row = $result -> fetch_assoc()) { 
-                                $Id = $row['id'];
-                                $Name = $row['name'];
-                                $Faculty = $row['class'];
-                                $Message = $row['message'];
+                    // Выполнение запроса к базе данных для получения данных
+                    $sql_query = "SELECT * FROM results";
+                    if ($result = $conn ->query($sql_query)) {
+                        while ($row = $result -> fetch_assoc()) { 
+                            $Id = $row['id'];
+                            $Name = $row['name'];
+                            $Faculty = $row['class'];
+                            $Message = $row['message'];
                     ?>
                     <tr class="trow">
                         <td><?php echo $Id; ?></td>
                         <td><?php echo $Name; ?></td>
                         <td><?php echo $Faculty; ?></td>
                         <td><?php echo $Message; ?></td>
-                        <td><a href="updatedata.php?id=<?php echo $Id; ?>" class="btn btn-primary">Edit</a></td>
-                        <td><a href="deletedata.php?id=<?php echo $Id; ?>" class="btn btn-danger">Delete</a></td>
+                        <!-- Ссылка для редактирования данных (доступна только для администраторов) -->
+                        <?php if ($role == 2) : ?>
+                            <td><a href="updatedata.php?id=<?php echo $Id; ?>" class="btn btn-primary">Edit</a></td>
+                            <!-- Ссылка для удаления данных (доступна только для администраторов) -->
+                            <td><a href="deletedata.php?id=<?php echo $Id; ?>" class="btn btn-danger">Delete</a></td>
+                        <?php endif ?>
                     </tr>
                     <?php
-                            } 
                         } 
+                    } 
                     ?>
                 </tbody>
             </table>
